@@ -1,32 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="button-wrapper">
+      <!-- 버튼은 컴포넌트로 만들기 -->
+      <button
+        class="btn btn-outline-primary"
+        v-for="language in languages"
+        :key="language.type"
+        @click="changeLanguage(language)"
+      >
+        {{ language.name }}
+      </button>
     </div>
-    <router-view/>
+    <div class="text">
+      {{ $t("text") }}
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import { languages } from "@/constants";
+
+export default {
+  data() {
+    return {
+      languages: [],
+    };
+  },
+
+  created() {
+    this.languages = languages;
+  },
+
+  methods: {
+    changeLanguage(language) {
+      this.$i18n.locale = language.type;
+    },
+  },
+};
+</script>
+
+<style>
+html,
+body,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.button-wrapper {
+  display: flex;
 }
 </style>
