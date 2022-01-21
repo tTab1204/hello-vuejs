@@ -3,11 +3,10 @@
     <div class="page-container">
       <div class="button-container">
         <div class="button-wrapper">
-          <!-- 버튼은 컴포넌트로 만들기 -->
           <button
             class="btn btn-outline-primary"
             v-for="language in languages"
-            :key="language.type"
+            :key="language.dateType"
             @click="changeLanguage(language)"
           >
             {{ language.name }}
@@ -16,6 +15,11 @@
         <div class="language-text">
           {{ $t("text") }}
         </div>
+        <div class="dateWrapper">
+          <DateTime :type="'Date'" length="short" :dateType="dateType" />
+          <DateTime :type="'Time'" length="time" :dateType="dateType" />
+          <DateTime :type="'DateTime'" length="long" :dateType="dateType" />
+        </div>
       </div>
     </div>
   </div>
@@ -23,11 +27,15 @@
 
 <script>
 import { languages } from "@/constants";
+import DateTime from "@/components/DateTime.vue";
 
 export default {
+  components: { DateTime },
+
   data() {
     return {
       languages: [],
+      dateType: "ko-KR",
     };
   },
 
@@ -38,6 +46,7 @@ export default {
   methods: {
     changeLanguage(language) {
       this.$i18n.locale = language.type;
+      this.dateType = language.dateType;
     },
   },
 };
@@ -80,7 +89,7 @@ body,
 }
 
 .language-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 1.5rem;
 }
 </style>

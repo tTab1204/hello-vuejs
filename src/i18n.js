@@ -4,11 +4,13 @@ import en from "@/locales/en.json";
 import ko from "@/locales/ko.json";
 import ru from "@/locales/ru.json";
 import ar from "@/locales/ar.json";
+import dateTimeFormats from "@/constants";
 
 Vue.use(VueI18n);
 
 export default new VueI18n({
   locale: "ko",
   fallbackLocale: "ko",
+  dateTimeFormats,
   messages: { en, ko, ru, ar },
 });
