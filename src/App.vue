@@ -16,9 +16,9 @@
           {{ $t("text") }}
         </div>
         <div class="dateWrapper">
-          <DateTime :type="'Date'" length="short" :dateType="dateType" />
-          <DateTime :type="'Time'" length="time" :dateType="dateType" />
-          <DateTime :type="'DateTime'" length="long" :dateType="dateType" />
+          <DateTime :type="'date'" :dateType="dateType" />
+          <DateTime :type="'time'" :dateType="dateType" />
+          <DateTime :type="'dateTime'" :dateType="dateType" />
         </div>
       </div>
     </div>

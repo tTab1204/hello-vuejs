@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
-import en from "@/locales/en.json";
-import ko from "@/locales/ko.json";
-import ru from "@/locales/ru.json";
-import ar from "@/locales/ar.json";
-import dateTimeFormats from "@/constants";
+import en from "@/locales/messages/en.json";
+import ko from "@/locales/messages/ko.json";
+import ru from "@/locales/messages/ru.json";
+import ar from "@/locales/messages/ar.json";
+import dateTimeFormats from "@/locales/dateTime";
 
 Vue.use(VueI18n);
 

@@ -31,35 +31,3 @@ export const languages = [
     dateType: "ru-RU",
   },
 ];
-
-const dateTimeFormat = {
-  short: {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  },
-  long: {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    weekday: "long",
-    hour: "numeric",
-    minute: "numeric",
-  },
-  time: {
-    hour: "numeric",
-    minute: "numeric",
-  },
-};
-
-// 반복 제거
-const dateTimeFormats = {
-  "en-US": dateTimeFormat,
-  "en-GB": dateTimeFormat,
-  "ko-KR": dateTimeFormat,
-  "ar-AE": dateTimeFormat,
-  "ar-SA": dateTimeFormat,
-  "ru-RU": dateTimeFormat,
-};
-
-export default dateTimeFormats;
