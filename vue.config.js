@@ -1,22 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        "@/": path.join(__dirname, "src/"),
+  // initialize scss variables for the whole project
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/styles/index.scss";`,
       },
     },
   },
-  // 에러 발생 지점 -> 왜 안되는지?
-  // initialize scss variables for the whole project
-  // css: {
-  //   loaderOptions: {
-  //     sass: {
-  //       prependData: `@import "@/[file_nam].scss"`,
-  //     },
-  //   },
-  // },
 
   // Generating source map js
   productionSourceMap: true,

@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: 'Pretendard';
+}
+
+button {
+  border: none;
+
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// remConverter
+$html-font-size: 16px;
+@function remConverter($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{remConverter($pxValue) / remConverter($html-font-size)}rem;
+}
