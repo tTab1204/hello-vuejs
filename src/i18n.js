@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
 import dateTimeFormats from "@/locales/dateTime";
+import numberFormats from "@/locales/number";
 import ruPluralizationRule from "@/utils/i18n/ruPluralizationRule";
 import arPluralizationRule from "@/utils/i18n/arPluralizationRule";
 
@@ -27,11 +28,12 @@ const loadLocaleMessages = () => {
 export default new VueI18n({
   locale: process.env.VUE_APP_I18N_LOCALE,
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE,
-  dateTimeFormats,
+  messages: loadLocaleMessages(),
   pluralizationRules: {
     ru: ruPluralizationRule,
     ar: arPluralizationRule,
   },
-  messages: loadLocaleMessages(),
+  dateTimeFormats,
+  numberFormats,
   silentTranslationWarn: true,
 });

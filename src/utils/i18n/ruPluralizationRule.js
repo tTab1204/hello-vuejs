@@ -1,15 +1,13 @@
 const ruPluralizationRule = (choice, choicesLength) => {
-  if (choice === 0) {
-    return 0;
-  }
-  console.log("choice: ", choice);
+  if (choice === 0) return 0;
 
   const teen = choice > 10 && choice < 20;
   const endsWithOne = choice % 10 === 1;
 
-  if (choicesLength < 4) {
-    return !teen && endsWithOne ? 1 : 2;
-  }
+  // if (choicesLength < 4) {
+  //   return !teen && endsWithOne ? 1 : 2;
+  // }
+
   if (!teen && endsWithOne) {
     return 1;
   }

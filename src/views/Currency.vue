@@ -3,7 +3,7 @@
     <div class="button-container">
       <div class="button-wrapper">
         <button
-          class="btn btn-outline-primary"
+          class="btn btn-primary"
           v-for="language in languages"
           :key="language.dateType"
           @click="changeLanguage(language)"
@@ -11,32 +11,31 @@
           {{ language.name }}
         </button>
       </div>
-      <div class="language-text">
-        {{ $t("text") }}
-      </div>
+      <p class="currency-text">{{ $n(3000, "currency", locale) }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import { languages } from "@/constants/language.js";
+import languesForCurrency from "@/constants/languagesForCurrency.js";
 
 export default {
   data() {
     return {
       languages: [],
-      dateType: "ko-KR",
+      language: "en",
+      locale: "en-US",
     };
   },
 
   created() {
-    this.languages = languages;
+    this.languages = languesForCurrency;
   },
 
   methods: {
-    changeLanguage(language) {
-      this.$i18n.locale = language.type;
-      this.dateType = language.dateType;
+    changeLanguage(value) {
+      this.$i18n.locale = value.locale;
+      this.locale = value.locale;
     },
   },
 };
@@ -78,8 +77,7 @@ body,
   margin-right: 0.8rem;
 }
 
-.language-text {
-  font-size: 1rem;
-  margin-top: 1.5rem;
+.currency-text {
+  margin-top: 10px;
 }
 </style>

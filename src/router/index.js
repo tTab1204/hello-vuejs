@@ -25,6 +25,11 @@ const routes = [
     name: "Pluralization",
     component: () => import("@/views/Pluralization.vue"),
   },
+  {
+    path: ROUTES.CURRENCY,
+    name: "Currency",
+    component: () => import("@/views/Currency.vue"),
+  },
 ];
 
 const router = new VueRouter({
