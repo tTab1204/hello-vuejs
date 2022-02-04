@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style>
 html,
 body,
 #app {
@@ -71,6 +71,7 @@ body,
 .button-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
 .btn {

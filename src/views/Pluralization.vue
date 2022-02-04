@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { languages } from "@/constants/language.js";
+import languagesForPlural from "@/constants/languagesForPlural.js";
 
 export default {
   data() {
@@ -47,7 +47,7 @@ export default {
   },
 
   created() {
-    this.languages = languages;
+    this.languages = languagesForPlural;
   },
 
   methods: {
@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 html,
 body,
 #app {

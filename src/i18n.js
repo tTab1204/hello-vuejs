@@ -11,10 +11,12 @@ const loadLocaleMessages = () => {
   const locales = require.context(
     "./locales/messages",
     true,
-    /[A-Za-z0-9-_,\s]+\.json$/i
+    /[A-Za-z]+\.json$/i
   );
+
   const messages = {};
 
+  // context module API: https://webpack.kr/guides/dependency-management/
   locales.keys().map((key) => {
     const matched = key.slice(2, 4);
 
