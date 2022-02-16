@@ -3,7 +3,7 @@
     <div class="button-container">
       <div class="button-wrapper">
         <button
-          class="btn btn-primary"
+          class="btn btn-outline-primary"
           v-for="language in languages"
           :key="language.dateType"
           @click="changeLanguage(language)"
@@ -75,6 +75,7 @@ body,
 .btn {
   width: 100px;
   margin-right: 0.8rem;
+  padding: 0.375rem 0.375rem;
 }
 
 .currency-text {

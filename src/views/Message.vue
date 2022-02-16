@@ -11,6 +11,7 @@
           {{ language.name }}
         </button>
       </div>
+
       <div class="language-text">
         {{ $t("text") }}
       </div>
@@ -26,11 +27,13 @@ export default {
     return {
       languages: [],
       dateType: "ko-KR",
+      name: "",
     };
   },
 
   created() {
     this.languages = languages;
+    this.name = "테스트";
   },
 
   methods: {
