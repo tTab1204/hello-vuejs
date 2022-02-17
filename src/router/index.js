@@ -26,6 +26,11 @@ const routes = [
     name: "Currency",
     component: () => import("@/views/Currency.vue"),
   },
+  {
+    path: ROUTES.DIRECTION,
+    name: "Direction",
+    component: () => import("@/views/Direction.vue"),
+  },
 ];
 
 const router = new VueRouter({

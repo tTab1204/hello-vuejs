@@ -12,6 +12,7 @@ html {
 }
 body {
   font-family: 'Pretendard';
+  // direction: rtl;
 }
 
 h1 {
@@ -22,6 +23,16 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+.rtlcss-example {
+  display: flex;
+  align-items: center;
+  margin-top: rem(20px);
+
+  & > div:first-child {
+    margin-right: 10px;
+  }
 }
 
 // remConverter
