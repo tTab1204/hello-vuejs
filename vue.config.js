@@ -8,12 +8,12 @@ module.exports = {
         prependData: `@import "@/styles/index.scss";`,
       },
     },
+    // webpack css 속성의 extract 속성 추가 조사 필요
     extract: {
-      filename: "css/[name].css",
-      chunkFilename: "css/[name].css",
+      filename: "css/[name].[hash].css",
+      chunkFilename: "css/[name].[hash].css",
     },
   },
-  // webpack css 속성의 extract 속성 추가 조사 필요
 
   configureWebpack: {
     plugins: [new WebpackRTLPlugin()],

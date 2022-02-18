@@ -1,11 +1,10 @@
 function addStyleSheet(string) {
   let link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
-  link.setAttribute("class", "ar");
+  link.setAttribute("class", "set-rtl");
   link.type = "text/css";
   link.href = string;
   document.head.appendChild(link);
-  console.log(link.href);
 }
 
 export function swapStyleSheet(sheetA, sheetB) {
@@ -14,3 +13,5 @@ export function swapStyleSheet(sheetA, sheetB) {
     addStyleSheet(element.href.replace(sheetA, sheetB));
   });
 }
+
+export default swapStyleSheet;
