@@ -19,8 +19,9 @@ export default {
 <style lang="scss" scoped>
 .main-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100vh;
 }
 </style>

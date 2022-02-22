@@ -1,9 +1,16 @@
 <template>
   <div class="html-rtl-container">
-    <button @click="applyLTR">LTR 적용</button>
-    <button @click="applyRTL">RTL 적용</button>
+    <h4>HTML</h4>
+    <div class="button-wrapper">
+      <button class="btn btn-outline-primary" @click="applyLTR">
+        LTR 적용
+      </button>
+      <button class="btn btn-outline-primary" @click="applyRTL">
+        RTL 적용
+      </button>
+    </div>
     <div :dir="direction" class="list-container">
-      <ul>
+      <ul class="list-group">
         <li>test 1</li>
         <li>test 2</li>
       </ul>
@@ -16,7 +23,7 @@
         <div>div-list-item2</div>
       </div>
       <div class="list-template">
-        <img :src="chaHospital" alt="cha_hospital" />
+        <img class="img-thumbnail" :src="chaHospital" alt="cha_hospital" />
         <div>차병원</div>
       </div>
       <div class="list-template">
@@ -24,8 +31,8 @@
         <div>{{ $d(new Date(), "date", "ko-KR") }}</div>
       </div>
       <div class="list-template">
-        <button>test 1</button>
-        <button>test 2</button>
+        <button class="btn btn-secondary">test 1</button>
+        <button class="btn btn-secondary">test 2</button>
       </div>
 
       <div class="list-template">
@@ -36,12 +43,12 @@
         <span class="number-box">5</span>
       </div>
       <div class="list-template">
-        <input type="text" value="1" />
-        <input type="text" value="2" />
+        <input class="form-control" type="text" placeholder="1" />
+        <input class="form-control" type="text" placeholder="2" />
       </div>
 
       <div>
-        <table>
+        <table class="table">
           <thead>
             <tr>
               <th>test row 1</th>
@@ -58,7 +65,7 @@
       </div>
 
       <div>
-        <textarea>
+        <textarea class="form-control">
           Hello my name is Ju Young
       </textarea
         >
@@ -99,6 +106,11 @@ export default {
 <style scoped lang="scss">
 .html-rtl-container {
   background: $gray-02;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .list-container {

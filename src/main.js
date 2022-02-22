@@ -10,7 +10,7 @@ import "bootstrap";
 import JQuery from "jquery";
 
 // css & scss
-// import "bootstrap/scss/bootstrap.scss";
+import "bootstrap/scss/bootstrap.scss";
 import "hooper/dist/hooper.css";
 import "vue-scroll-picker/dist/style.css";
 
