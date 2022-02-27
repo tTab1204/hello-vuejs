@@ -2,10 +2,18 @@
   <div class="rtlcss-container">
     <h4>RTLCSS</h4>
     <div class="button-wrapper">
-      <button class="btn btn-outline-primary" @click="applyLTR">
+      <button
+        :disabled="ltrButtonDisabled"
+        class="btn btn-outline-primary"
+        @click="applyLTR"
+      >
         LTR 적용
       </button>
-      <button class="btn btn-outline-primary" @click="applyRTL">
+      <button
+        :disabled="rtlButtonDisabled"
+        class="btn btn-outline-primary"
+        @click="applyRTL"
+      >
         RTL 적용
       </button>
     </div>
@@ -82,16 +90,22 @@ export default {
   data() {
     return {
       chaHospital: cha_hospital,
+      ltrButtonDisabled: false,
+      rtlButtonDisabled: false,
     };
   },
 
   methods: {
     applyLTR() {
       swapStyleSheet(".rtl.css", ".css");
+      this.ltrButtonDisabled = true;
+      this.rtlButtonDisabled = false;
     },
 
     applyRTL() {
       swapStyleSheet(".css", ".rtl.css");
+      this.ltrButtonDisabled = false;
+      this.rtlButtonDisabled = true;
     },
   },
 };
